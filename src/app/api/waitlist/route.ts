@@ -5,6 +5,10 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+export async function GET() {
+  return NextResponse.json({ ok: true, route: "waitlist" });
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
